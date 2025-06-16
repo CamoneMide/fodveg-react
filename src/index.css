@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "swiper/swiper-bundle.css";
+
+* {
+  box-sizing: border-box;
+  /* padding: 0; */
+  /* margin: 0; */
+}
+
+/* Color Variables */
+:root {
+  --text-color: #264653;
+  --text-color-white: #fff;
+  --text-color-active: #fec740;
+  --text-color-inActive: ;
+  --text-color-reduced: #777777;
+  --text-color-sub: ;
+  --area-background-color: ;
+}
+[data-theme="dark"] {
+  --text-color: #fff; /* Replacing #264653 */
+  --text-color-white: #000;
+  --text-color-active: #fec740; /* Keeping the same */
+  --text-color-inActive: ;
+  --text-color-reduced: #ccc; /* Replacing #777777 */
+  --text-color-sub: ;
+  --area-background-color: #333; /* A dark background color */
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Fonts */
+.fontPop {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.fontKumbh {
+  font-family: "Kumbh Sans", serif;
+}
+.fontTektur {
+  font-family: "Tektur", sans-serif;
+}
+.fontPop {
+  font-family: "Poppins", sans-serif;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+/* Shadows */
+
+.heroBoxShadow {
+  box-shadow: 0px 16px 40px -8px #00000040;
+}
+
+.cardShadow {
+  box-shadow: 0px 2px 4px 0px #00000040;
+}
+.cardShadow2 {
+  box-shadow: 0px 10px 40px 0px #00000040;
+}
+.cardShadow3 {
+  box-shadow: 0px 16px 40px 0px #00000029;
+}
+
+/* Animations */
+@keyframes custom-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-custom-rotate {
+  animation: custom-rotate 90s linear infinite;
+}
+
+.swiper-pagination > .swiper-pagination-bullet {
+  background: var(--text-color) !important;
+}
+
+/* .swiper-pagination-bullet-active {
+  width: 10px !important;
+  height: 10px !important;
+} */
+
+.testiSwiper > .swiper-pagination > .swiper-pagination-bullet {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px !important;
+  opacity: 0.8;
+}
+.testiSwiper > .swiper-pagination > .swiper-pagination-bullet:nth-child(1) {
+  background: url("./assets/images/custImg1.jpg") no-repeat center center/cover !important;
+}
+.testiSwiper > .swiper-pagination > .swiper-pagination-bullet:nth-child(2) {
+  background: url("./assets/images/custImg2.png") no-repeat center center/cover !important;
+}
+.testiSwiper > .swiper-pagination > .swiper-pagination-bullet:nth-child(3) {
+  background: url("./assets/images/custImg3.jpg") no-repeat center center/cover !important;
+}
+.testiSwiper > .swiper-pagination > .swiper-pagination-bullet-active {
+  width: 80px;
+  height: 80px;
+  opacity: 1;
+}
+
+.testiSwiper > .swiper-button-prev,
+.testiSwiper > .swiper-button-next {
+  margin-top: 110px;
+  width: 50px;
+  height: 50px;
+  background: #7eb23d;
+  box-shadow: 0px 2px 4px 0px #00000040;
+  border-radius: 8px;
+  color: #ffffff;
+  z-index: 11;
+}
+.testiSwiper > .swiper-button-prev::after,
+.testiSwiper > .swiper-button-next::after {
+  font-size: 24px;
+}
+
+.testiSwiper > .swiper-button-prev.swiper-button-disabled,
+.testiSwiper > .swiper-button-next.swiper-button-disabled {
+  background: white;
+  color: #264653;
+  opacity: 0.6;
+}
+
+/* Marquee animation */
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.marquee-right {
+  animation: marquee-right 50s linear infinite; /* Adjust speed as needed */
+}
+
+.marquee-left {
+  animation: marquee-left 50s linear infinite; /* Adjust speed as needed */
+}
+
+.marquee-right:hover,
+.marquee-left:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
