@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="pt-[40px] md:pt-[40px] lg:pt-[79px] xl:pt-[99px] flex flex-col w-[94%] lg:w-[45.5%] max-w-[570px]">
             <div className="w-full lg:max-w-none flex flex-col gap-[8px] lg:gap-[10px] xl:gap-[12px]">
               <motion.h2
-                variants={fadeIn("down", "tween", 0.2, 0.4)}
+                variants={fadeIn("down", "tween", 0, 0.4)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
@@ -34,7 +34,13 @@ const Hero = () => {
                   Fresh, Fast, and Affordable
                 </span>
               </motion.h2>
-              <p className="text-[14px] xl:text-[16px] font-[500] tracking-[0%] text-[#606060]">
+              <motion.p
+                variants={fadeIn("up", "tween", 0.1, 0.4)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="text-[14px] xl:text-[16px] font-[500] tracking-[0%] text-[#606060]"
+              >
                 <span className="block md:hidden">
                   Skip the long lines and enjoy the convenience of fresh,
                   high-quality groceries delivered straight to your door.
@@ -45,7 +51,7 @@ const Hero = () => {
                   farm-fresh veggies to pantry essentials, we make shopping
                   easy, affordable, and stress-free.
                 </span>
-              </p>
+              </motion.p>
             </div>
             <motion.div
               variants={fadeIn("up", "tween", 0.2, 0.4)}
@@ -140,7 +146,7 @@ const Hero = () => {
             <div className="hidden md:flex lg:hidden w-full h-[130px]" />
           </div>
           <motion.div
-            variants={fadeIn("left", "tween", 0.2, 0.4)}
+            variants={fadeIn("left", "tween", 0, 0.4)}
             initial="hidden"
             animate="show"
             className="flex h-[420px] md:h-[390px] lg:h-[577px] xl:h-[722px] max-h-[900px] w-full lg:w-[560px] xl:w-[700px] md:translate-x-[10%] lg:translate-x-[20%]"
